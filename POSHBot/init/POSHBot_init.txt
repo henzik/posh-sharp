@@ -4,8 +4,8 @@
 # won't be used.
 
 
-[POSHBot]
-POSHBot.botname = Celia
+[POSHBotHS409]
+POSHBot.botname = XxXxFabious4lyf420XxXx
 POSHBot.team = 0
 POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000

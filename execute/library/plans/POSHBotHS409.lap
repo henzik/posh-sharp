@@ -3,6 +3,7 @@
 ; lost the next time the tool is used.
 ; -------------------------------------------------------------
 (
+(documentation "Your Title" "Your Name" "Your file comments")
 (AP AP-inch (seconds 1.0) (
 	idle
 ))
@@ -12,7 +13,7 @@
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
 	(elements
 		(	(CE-moveto-navpoint (trigger ((selected_target 1.0 =) (reached_target 0.0 =))) moveto-selected-nav)	)
-		(	(CE-find-nxt-waypoint (trigger ((close_navpoint 1.0 =))) select_navpoint )	)
+		(	(CE-find-nxt-waypoint (trigger ((close_navpoint 1.0 =))) select_navpoint)	)
 	)
 )
 (C get-enemy-flag (seconds 30.0) (goal ((have_enemy_flag 1.0 =)))
@@ -45,7 +46,7 @@
 		(wander_around (trigger ((focusing_task 1.0 !=))) wander-map(seconds 0.3)))
 		(
 
-		(inch (trigger ((succeed))) AP-inch(seconds 0.1)))
+		(inch (trigger ((succeed))) AP-inch(seconds 0.01)))
 
 	)
 )
