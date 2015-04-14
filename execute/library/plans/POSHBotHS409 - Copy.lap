@@ -19,11 +19,6 @@
 	moveto_navpoint 
 	Jump
 ))
-(AP hunt (minutes 1.0) (
-	FaceAttacker 
-	RunToEnemyCarryingOurFlag 
-	ShootEnemyCarryingOurFlag
-))
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
 	(elements
 		(	(CE-moveto-navpoint (trigger ((selected_target 1.0 =) (reached_target 0.0 =))) moveto-selected-nav)	)
@@ -51,13 +46,10 @@
 	(drives
 		(
 
-		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
-		(
-
-		(hunt-enemy (trigger ((SeeEnemyWithOurFlag))) hunt(seconds 1.0)))
-		(
-
 		(shooting (trigger ((SeeEnemy))) shoot-baddy))
+		(
+
+		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
 		(
 
 		(get-enemy-flag-from-base (trigger ((enemy_flag_reachable 1.0 =))) get-enemy-flag(seconds 0.3)))

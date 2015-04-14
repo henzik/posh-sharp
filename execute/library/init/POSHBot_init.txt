@@ -17,6 +17,12 @@ POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000
 
 [POSHBotHS409]
+POSHBot.botname = SWAGYY
+POSHBot.team = 0
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBotHS409]
 POSHBot.botname = Bob
 POSHBot.team = 1
 POSHBot.ip = 127.0.0.1
@@ -24,6 +30,12 @@ POSHBot.port = 3000
 
 [POSHBotHS409]
 POSHBot.botname = David
+POSHBot.team = 1
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBotHS409]
+POSHBot.botname = Jasnoon
 POSHBot.team = 1
 POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000

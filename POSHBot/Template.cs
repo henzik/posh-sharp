@@ -144,7 +144,7 @@ namespace Posh_sharp.POSHBot
         [ExecutableSense("is_stuck")]
         public bool is_stuck()
         {
-            return GetBot().Moving();
+            return GetBot().Stuck();
         }
 
         [ExecutableSense("weaponSense")]
