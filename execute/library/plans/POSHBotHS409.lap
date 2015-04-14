@@ -10,6 +10,15 @@
 (AP AP-moveing (minutes 1.0) (
 	moveto_navpoint
 ))
+(AP shoot-baddy (minutes 1.0) (
+	SetAttacker 
+	FaceAttacker 
+	ShootAttacker
+))
+(AP jumping (minutes 1.0) (
+	moveto_navpoint 
+	Jump
+))
 (C wander-map (seconds 2.0) (goal ((focusing_task 1.0 =)))
 	(elements
 		(	(CE-moveto-navpoint (trigger ((selected_target 1.0 =) (reached_target 0.0 =))) moveto-selected-nav)	)
@@ -37,6 +46,9 @@
 	(drives
 		(
 
+		(shooting (trigger ((SeeEnemy))) shoot-baddy))
+		(
+
 		(return-enemy-flag (trigger ((have_enemy_flag 1.0 =))) retrace-back(seconds 0.3)))
 		(
 
@@ -44,6 +56,9 @@
 		(
 
 		(wander_around (trigger ((focusing_task 1.0 !=))) wander-map(seconds 0.3)))
+		(
+
+		(jump-around (trigger ((is_stuck))) jumping(seconds 2.0)))
 		(
 
 		(inch (trigger ((succeed))) AP-inch(seconds 0.01)))

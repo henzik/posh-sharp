@@ -72,11 +72,46 @@ namespace Posh_sharp.POSHBot
         /// Actions always return true or false and should be the actuators of an agent.
         /// </summary>
         /// <returns>True or false, dependent if the action was executed successful.</returns>
-        [ExecutableAction("TemplateAction1")]
-        public bool TemplateAction1()
+        [ExecutableAction("Jump")]
+        public bool Jump()
         {
-            if (_debug_)
-                Console.Out.WriteLine(" in TemplateAction1");
+
+            GetBot().SendMessage("JUMP", new Dictionary<string, string>());
+            Console.Out.WriteLine(" in Jump");
+            unstuck();
+
+            // This is an example command which sends a request to the game engine to let the character stop shooting.
+            // The commands are based on the included GameBots2004 API which is available on the project webpage.
+            // GetBot().SendMessage("STOPSHOOT", new Dictionary<string, string>());
+            return false;
+        }
+
+        [ExecutableAction("RocketWhisper")]
+        public bool RocketWhisper()
+        {
+            GetBot().SendMessage("MESSAGE", new Dictionary<string,string>()
+                    {
+                        {"String", "HI HENRIK"}
+                    });
+            return false;
+        }
+
+        private void unstuck()
+        {
+            GetBot().Stuck(10f);
+            GetBot().Stuck(10f);
+            GetBot().Stuck(10f);
+        }
+
+
+
+
+        [ExecutableAction("Stop")]
+        public bool Stop()
+        {
+            GetBot().SendMessage("STOP", new Dictionary<string, string>());
+            //if (_debug_)
+            Console.Out.WriteLine(" in STOP");
 
             // This is an example command which sends a request to the game engine to let the character stop shooting.
             // The commands are based on the included GameBots2004 API which is available on the project webpage.
@@ -106,20 +141,17 @@ namespace Posh_sharp.POSHBot
         /// </summary>
         /// <returns>Senses can return bools, ints, floats and longs but should not return complex objects. If you are in need of complex 
         /// information about the world you should store those inside the behaviour and let actions read them directly.</returns>
-        [ExecutableSense("TemplateSense1")]
-        public bool TemplateSense1()
+        [ExecutableSense("is_stuck")]
+        public bool is_stuck()
         {
-            if (_debug_)
-                Console.Out.WriteLine(" in TemplateSense1");
-            return false;
+            return GetBot().Moving();
         }
 
-        [ExecutableSense("TemplateSense2")]
-        public int TemplateSense2()
+        [ExecutableSense("weaponSense")]
+        public bool weaponSense()
         {
-            if (_debug_)
-                Console.Out.WriteLine(" in TemplateSense2");
-            return 0;
+            InvItem[] seen = GetBot().viewItems.ToArray();
+            return (seen.Length > 0);
         }
     }
 }     

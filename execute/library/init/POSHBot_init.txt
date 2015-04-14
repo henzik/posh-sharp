@@ -5,8 +5,26 @@
 
 
 [POSHBotHS409]
-POSHBot.botname = Celia
+POSHBot.botname = XxXxFabious4lyf420XxXx
 POSHBot.team = 0
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBotHS409]
+POSHBot.botname = XxXxSW4GFORJESUSXxXx
+POSHBot.team = 0
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBotHS409]
+POSHBot.botname = Bob
+POSHBot.team = 1
+POSHBot.ip = 127.0.0.1
+POSHBot.port = 3000
+
+[POSHBotHS409]
+POSHBot.botname = David
+POSHBot.team = 1
 POSHBot.ip = 127.0.0.1
 POSHBot.port = 3000
 
